@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "jsx": "react",
+    "jsxFactory": "createElement",
+    "jsxFragmentFactory": "Fragment",
+    "lib": ["ES2017", "DOM"],
+    "module": "Preserve",
+    "noUncheckedIndexedAccess": true,
+    "outDir": "build/types",
+    "verbatimModuleSyntax": true
+  },
+  "include": ["src"]
+}

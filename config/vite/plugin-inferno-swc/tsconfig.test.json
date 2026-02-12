@@ -1,0 +1,20 @@
+{
+  "include": ["playwright.config.ts", "playground"],
+  "compilerOptions": {
+    "module": "ESNext",
+    "lib": ["ES2023", "DOM"],
+    "target": "ES2023",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "useUnknownInCatchVariables": true,
+    "noUncheckedSideEffectImports": true,
+    "noPropertyAccessFromIndexSignature": true
+  }
+}

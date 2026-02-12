@@ -1,0 +1,19 @@
+#app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card {
+  padding: 2em;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  margin: 1.5rem auto;
+  max-width: 520px;
+}
+
+.read-the-docs {
+  color: #a3a3a3;
+}

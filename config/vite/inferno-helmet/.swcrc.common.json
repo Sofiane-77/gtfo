@@ -1,0 +1,20 @@
+{
+  "jsc": {
+    "parser": {
+      "syntax": "typescript",
+      "tsx": true
+    },
+    "transform": {
+      "react": {
+        "pragma": "Inferno.createElement",
+        "pragmaFrag": "Fragment",
+        "runtime": "classic",
+        "development": false
+      }
+    },
+    "target": "es2020"
+  },
+  "module": {
+    "type": "commonjs"
+  }
+}

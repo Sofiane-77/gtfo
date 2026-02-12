@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sofiane-77.github.io/gtfo/sitemap.xml

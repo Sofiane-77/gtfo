@@ -1,0 +1,411 @@
+@import "tailwindcss";
+
+
+@layer base {
+    @font-face {
+        font-family: 'Fira Mono';
+        src: url('/fonts/firamono/FiraMono-Regular.eot');
+        src: local('Fira Mono Regular'), local('FiraMono-Regular'),
+            url('/fonts/firamono/FiraMono-Regular.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/firamono/FiraMono-Regular.woff2') format('woff2'),
+            url('/fonts/firamono/FiraMono-Regular.woff') format('woff'),
+            url('/fonts/firamono/FiraMono-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Fira Mono';
+        src: url('/fonts/firamono/FiraMono-Medium.eot');
+        src: local('Fira Mono Medium'), local('FiraMono-Medium'),
+            url('/fonts/firamono/FiraMono-Medium.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/firamono/FiraMono-Medium.woff2') format('woff2'),
+            url('/fonts/firamono/FiraMono-Medium.woff') format('woff'),
+            url('/fonts/firamono/FiraMono-Medium.ttf') format('truetype');
+        font-weight: 500;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Fira Mono';
+        src: url('/fonts/firamono/FiraMono-Bold.eot');
+        src: local('Fira Mono Bold'), local('FiraMono-Bold'),
+            url('/fonts/firamono/FiraMono-Bold.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/firamono/FiraMono-Bold.woff2') format('woff2'),
+            url('/fonts/firamono/FiraMono-Bold.woff') format('woff'),
+            url('/fonts/firamono/FiraMono-Bold.ttf') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Oxanium';
+        src: url('/fonts/oxanium/Oxanium-ExtraBold.eot');
+        src: local('Oxanium ExtraBold'), local('Oxanium-ExtraBold'),
+            url('/fonts/oxanium/Oxanium-ExtraBold.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/oxanium/Oxanium-ExtraBold.woff2') format('woff2'),
+            url('/fonts/oxanium/Oxanium-ExtraBold.woff') format('woff'),
+            url('/fonts/oxanium/Oxanium-ExtraBold.ttf') format('truetype');
+        font-weight: 800;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Oxanium';
+        src: url('/fonts/oxanium/Oxanium-Bold.eot');
+        src: local('Oxanium Bold'), local('Oxanium-Bold'),
+            url('/fonts/oxanium/Oxanium-Bold.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/oxanium/Oxanium-Bold.woff2') format('woff2'),
+            url('/fonts/oxanium/Oxanium-Bold.woff') format('woff'),
+            url('/fonts/oxanium/Oxanium-Bold.ttf') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Oxanium';
+        src: url('/fonts/oxanium/Oxanium-Light.eot');
+        src: local('Oxanium Light'), local('Oxanium-Light'),
+            url('/fonts/oxanium/Oxanium-Light.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/oxanium/Oxanium-Light.woff2') format('woff2'),
+            url('/fonts/oxanium/Oxanium-Light.woff') format('woff'),
+            url('/fonts/oxanium/Oxanium-Light.ttf') format('truetype');
+        font-weight: 300;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Oxanium';
+        src: url('/fonts/oxanium/Oxanium-SemiBold.eot');
+        src: local('Oxanium SemiBold'), local('Oxanium-SemiBold'),
+            url('/fonts/oxanium/Oxanium-SemiBold.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/oxanium/Oxanium-SemiBold.woff2') format('woff2'),
+            url('/fonts/oxanium/Oxanium-SemiBold.woff') format('woff'),
+            url('/fonts/oxanium/Oxanium-SemiBold.ttf') format('truetype');
+        font-weight: 600;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Oxanium';
+        src: url('/fonts/oxanium/Oxanium-Regular.eot');
+        src: local('Oxanium Regular'), local('Oxanium-Regular'),
+            url('/fonts/oxanium/Oxanium-Regular.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/oxanium/Oxanium-Regular.woff2') format('woff2'),
+            url('/fonts/oxanium/Oxanium-Regular.woff') format('woff'),
+            url('/fonts/oxanium/Oxanium-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Oxanium';
+        src: url('/fonts/oxanium/Oxanium-ExtraLight.eot');
+        src: local('Oxanium ExtraLight'), local('Oxanium-ExtraLight'),
+            url('/fonts/oxanium/Oxanium-ExtraLight.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/oxanium/Oxanium-ExtraLight.woff2') format('woff2'),
+            url('/fonts/oxanium/Oxanium-ExtraLight.woff') format('woff'),
+            url('/fonts/oxanium/Oxanium-ExtraLight.ttf') format('truetype');
+        font-weight: 200;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Oxanium';
+        src: url('/fonts/oxanium/Oxanium-Medium.eot');
+        src: local('Oxanium Medium'), local('Oxanium-Medium'),
+            url('/fonts/oxanium/Oxanium-Medium.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/oxanium/Oxanium-Medium.woff2') format('woff2'),
+            url('/fonts/oxanium/Oxanium-Medium.woff') format('woff'),
+            url('/fonts/oxanium/Oxanium-Medium.ttf') format('truetype');
+        font-weight: 500;
+        font-style: normal;
+    }
+
+    html, body, #root {
+        @apply m-0 h-full w-full;
+    }
+}
+
+:root {
+    --bg-terminal: linear-gradient(to bottom, #041a27 0 40px, transparent 40px);
+    --bg-terminal-full: #041a27;
+    --accent-cyan: #22d3ee;
+    --accent-cyan-soft: rgba(34, 211, 238, 0.45);
+    --scrollbar-track: rgba(4, 26, 39, 0.7);
+    --scrollbar-thumb: rgba(34, 211, 238, 0.6);
+    --scrollbar-thumb-hover: rgba(34, 211, 238, 0.85);
+    --control-bg: rgba(4, 26, 39, 0.9);
+    --control-border: rgba(34, 211, 238, 0.35);
+
+    --home-terminal-link-left: clamp(12px, 2vw, 32px);
+    --home-terminal-link-bottom: clamp(-116px, -13vh, -12px); /*  clamp(12px, 3vh, 48px);  clamp(-80px, -9vh, -12px); */
+
+    --terminal-audio-bg: rgba(2, 16, 8, 0.75);
+    --terminal-audio-border: rgba(34, 197, 94, 0.4);
+    --terminal-audio-box-shadow: inset 0 0 0 1px rgba(34, 197, 94, 0.12);
+
+    --terminal-audio-button-border: rgba(34, 197, 94, 0.5);
+    --terminal-audio-button-bg: rgba(5, 20, 10, 0.7);
+    --terminal-audio-button-bg-hover: rgba(34, 197, 94, 0.15);
+
+    --terminal-audio-bar-bg: rgba(2, 12, 6, 0.8);
+    --terminal-audio-bar-border: rgba(34, 197, 94, 0.3);
+
+    --terminal-audio-bar-fill-bg: linear-gradient(90deg, rgba(34, 197, 94, 0.25), rgba(34, 197, 94, 0.85));
+    --terminal-audio-bar-fill-box-shadow: 0 0 8px rgba(34, 197, 94, 0.35);
+
+    --terminal-audio-volume-slider-bg: rgba(2, 12, 6, 0.8);
+    --terminal-audio-volume-slider-border: rgba(34, 197, 94, 0.3);
+
+    --zoom-bright: zoomBright 2.2s ease-in-out infinite;
+}
+
+
+@keyframes zoomBright {
+    0%, 100% {
+      transform: scale(1);
+      filter: brightness(1);
+    }
+    50% {
+      transform: scale(1.01);
+      filter: brightness(1.15);
+    }
+  }
+
+.drop-target {
+    position: relative;
+    transition: box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.drop-target.drop-active {
+    box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.7), 0 0 14px rgba(34, 211, 238, 0.35);
+    background-image: linear-gradient(120deg, rgba(34, 211, 238, 0.18), rgba(2, 10, 16, 0.05));
+}
+
+.drop-target.drop-active::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border: 1px dashed rgba(34, 211, 238, 0.6);
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.readlog-title::after {
+    content: '\005C';
+    display: inline-block;
+    margin-left: .4em;
+    width: 1ch;                /* évite les décalages de mise en page */
+    text-align: center;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    animation: ascii-spin 0.9s 2;
+    opacity: 0;
+}
+
+
+@keyframes ascii-spin {
+    0% { content: '|'; opacity: 1;}
+    25% { content: '/'; }
+    50% { content: '-'; }
+    75% { content: '\005C'; } /* \ */
+    100% { content: '|'; opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .readlog-title::after {
+        animation: none;
+        content: '…';
+    }
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+    border-left: 1px solid rgba(34, 211, 238, 0.12);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(34, 211, 238, 0.25), var(--scrollbar-thumb));
+    border: 1px solid rgba(4, 26, 39, 0.9);
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgba(34, 211, 238, 0.55), var(--scrollbar-thumb-hover));
+}
+
+
+.terminal-audio__volume-slider::-webkit-slider-thumb, .terminal-audio__volume-slider::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    background: #22c55e;
+    border: 1px solid rgba(2, 16, 8, 0.8);
+}
+
+.terminal-audio__volume-slider::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.terminal-audio__volume-slider::-moz-range-track {
+    background: transparent;
+}
+
+
+.flashlight-overlay{
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+  
+    --cursorX: 50vw;
+    --cursorY: 50vh;
+  
+    background: radial-gradient(
+      circle 15vmax at var(--cursorX) var(--cursorY),
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0.08) 35%,
+      rgba(0,0,0,0.28) 60%,
+      rgba(0,0,0,0.60) 82%,
+      rgba(0,0,0,0.92) 100%
+    );
+  
+    contain: paint;
+    will-change: background;
+
+    -webkit-mask-image: url("/images/lights_mask_inverted.png");
+    mask-image: url("/images/lights_mask_inverted.png");
+    -webkit-mask-repeat: no-repeat, no-repeat;
+    mask-repeat: no-repeat, no-repeat;
+    -webkit-mask-size: cover, cover;
+    mask-size: cover, cover;
+    -webkit-mask-position: left, center;
+    mask-position: left, center;
+    mask-mode: luminance;
+}
+
+@media(hover: none) {
+    .flashlight-overlay{         
+        background: radial-gradient(
+            circle 30vmax at var(--cursorX) var(--cursorY),
+            rgba(0,0,0,0) 0%,
+            rgba(0,0,0,0.08) 35%,
+            rgba(0,0,0,0.28) 60%,
+            rgba(0,0,0,0.60) 82%,
+            rgba(0,0,0,0.72) 100%
+        );
+    }
+}
+
+/*
+.flashlight-overlay::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  
+    background: url("/images/lights.png") left center/cover no-repeat;
+  
+    opacity: 0.9;
+    filter: blur(1px) brightness(2.2) saturate(1.2); 
+  
+    mix-blend-mode: luminosity;
+}
+*/
+
+
+:root {
+    /* Colors */
+    --r8a2-neon: #00ff00;
+    --r8a2-neonSoft: #00cc00;
+    --r8a2-header: #001a00;
+    --r8a2-terminal: rgba(5, 12, 5, 0.92);
+  
+    /* Z */
+    --r8a2-z-bg: -1;
+    --r8a2-z-ui: 10;
+  
+    /* Derived */
+    --r8a2-border: color-mix(in srgb, var(--r8a2-neon) 80%, transparent);
+    --r8a2-borderSoft: color-mix(in srgb, var(--r8a2-neon) 30%, transparent);
+    --r8a2-borderStrong: color-mix(in srgb, var(--r8a2-neon) 90%, transparent);
+    --r8a2-ring: color-mix(in srgb, var(--r8a2-neon) 25%, transparent);
+  
+    /* Shadows (Option A = une seule var complète) */
+    --r8a2-windowShadow: 0 0 25px rgba(0, 255, 0, 0.5), inset 0 0 15px rgba(0, 255, 0, 0.25);
+    --r8a2-keyShadow: inset 0 0 12px rgba(0, 255, 0, 0.18);
+    --r8a2-insetTopLine: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    --r8a2-btnShadow: 0 0 14px rgba(0, 255, 0, 0.35);
+    --r8a2-btnShadowHover: 0 0 22px rgba(0, 255, 0, 0.55);
+  
+    /* Beam */
+    --r8a2-scan: linear-gradient(to bottom, transparent, rgba(0, 255, 0, 0.2), transparent);
+  
+    /* Text shadows (Option A aussi) */
+    --r8a2-ts-title: 0 0 10px rgba(0, 255, 0, 0.55);
+    --r8a2-ts-soft: 0 0 3px rgba(0, 255, 0, 0.55);
+    --r8a2-ts-header: 0 0 6px rgba(0, 255, 0, 0.55);
+    --r8a2-ts-status: 0 0 5px currentColor;
+  }
+  
+  /* Scope strict : n’impacte que la page #r8a2 */
+  #r8a2 input[type="date"] { color-scheme: dark; }
+  
+  /* CRT scanlines/vignette (pseudo-elements → plus clean en CSS) */
+  #r8a2 .r8a2-crt::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.04) 0px,
+      rgba(255, 255, 255, 0.04) 1px,
+      rgba(0, 0, 0, 0) 2px,
+      rgba(0, 0, 0, 0) 4px
+    );
+    mix-blend-mode: overlay;
+    opacity: 0.25;
+    border-radius: 0.5rem;
+  }
+  #r8a2 .r8a2-crt::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(80% 70% at 50% 30%, rgba(0, 255, 0, 0.12), rgba(0, 0, 0, 0) 55%),
+      radial-gradient(120% 90% at 50% 110%, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0) 60%);
+    opacity: 0.9;
+    border-radius: 0.5rem;
+  }
+  
+  /* Keyframes + 3 classes d’animation (encore une fois : plus lisible en CSS) */
+  @keyframes r8a2-scan {
+    0% { transform: translateY(-120%); }
+    100% { transform: translateY(120%); }
+  }
+  @keyframes r8a2-flicker {
+    0%, 100% { opacity: 1; }
+    42% { opacity: 0.7; }
+    43% { opacity: 0.92; }
+  }
+  @keyframes r8a2-glow {
+    0%, 100% { filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.45)); }
+    50% { filter: drop-shadow(0 0 18px rgba(0, 255, 0, 0.65)); }
+  }
+  
+  #r8a2 .r8a2-scan { animation: r8a2-scan 3.6s linear infinite; }
+  #r8a2 .r8a2-flicker { animation: r8a2-flicker 6s infinite; }
+  #r8a2 .r8a2-glow { animation: r8a2-glow 2.2s ease-in-out infinite; }

@@ -1,0 +1,41 @@
+{
+  "name": "gtfo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SWC inferno example application!",
+  "workspaces": [
+    "config/vite/plugin-inferno-swc",
+    "config/vite/inferno-helmet"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "inferno": "^9.0.11",
+    "inferno-create-element": "^9.0.11",
+    "inferno-helmet": "workspace:*",
+    "inferno-router": "^9.0.11"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@swc/core": "^1.15.11",
+    "@tailwindcss/postcss": "^4.1.18",
+    "@tsconfig/recommended": "^1.0.13",
+    "@vitejs/plugin-inferno-swc": "workspace:*",
+    "eslint": "^9.39.2",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-inferno": "^7.39.0",
+    "globals": "^17.3.0",
+    "tailwindcss": "^4.1.18",
+    "typescript-eslint": "^8.54.0",
+    "vite": "^7.3.1"
+  }
+}

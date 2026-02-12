@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Sofiane-77">
+    <title>GTFO Progress — Log Tracker & R8A2 Password</title>
+    <meta
+      name="description"
+      content="Track your GTFO log progression and get the current weekly R8A2 secondary password."
+    />
+    <meta name="keywords" content="gtfo progress, gtfo log tracker, gtfo logs, gtfo log progression, gtfo player.log parser, gtfo read all logs, achievement_readalllogs, D-Lock Block Decipherer, D-Lock Block Decipherer achievement, r8a2 password, r8a2 secondary password, weekly r8a2 password, gtfo r8a2 password, gtfo tools" />
+        <!-- Canonical (default = Home) -->
+    <link rel="canonical" href="https://sofiane-77.github.io/gtfo/" />
+
+    <!-- Open Graph (default = Home) -->
+    <meta property="og:url" content="https://sofiane-77.github.io/gtfo/" />
+    <meta property="og:site_name" content="GTFO Progress" />
+    <meta
+      property="og:title"
+      content="GTFO Progress — Log Tracker & R8A2 Password"
+    />
+    <meta
+      property="og:description"
+      content="Track your GTFO log progression and get the current weekly R8A2 secondary password."
+    />
+    <meta
+      property="og:image"
+      content="https://sofiane-77.github.io/gtfo/images/og/home.jpg"
+    />
+
+    <!-- Twitter (default = Home) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="GTFO Progress — Log Tracker & R8A2 Password"
+    />
+    <meta
+      name="twitter:description"
+      content="Track your GTFO log progression and get the current weekly R8A2 secondary password."
+    />
+    <meta property="twitter:url" content="https://sofiane-77.github.io/gtfo/" />
+    <meta
+      name="twitter:image"
+      content="https://sofiane-77.github.io/gtfo/images/og/home.jpg"
+    />
+
+    <meta property="og:type" content="website" />
+    <!-- favicons -->
+    <link rel="icon" type="image/png" href="/images/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicons/favicon.svg" />
+    <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="GTFO Progress" />
+    <link rel="manifest" href="/images/favicons/site.webmanifest" />
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/index.tsx"></script>
+
+    <script>
+      // GitHub Pages SPA restore: turn /<repo>/?/route back into /<repo>/route (keeps the URL clean).
+      (function restoreSpaRoute(location) {
+        // We only act on the special "/?/" pattern produced by 404.html.
+        if (location.search.length > 1 && location.search[1] === "/") {
+          // Decode "~and~" back to "&" ("~and~" is used to safely transport query params).
+          const decoded = location.search
+            .slice(1)
+            .split("&")
+            .map((part) => part.replace(/~and~/g, "&"))
+            .join("?");
+
+          
+          // Avoid double slashes when pathname ends with "/" and decoded starts with "/".
+          const basePath = location.pathname.endsWith("/")
+            ? location.pathname.slice(0, -1)
+            : location.pathname;
+    
+          // Replace the URL without reloading and without adding a history entry.
+          window.history.replaceState(null, "", basePath + decoded + location.hash);
+        }
+      })(window.location);
+    </script>
+  </body>
+</html>

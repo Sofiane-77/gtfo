@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <title>Redirecting…</title>
+
+    <script>
+      /**
+       * GitHub Pages does not support server-side rewrites for SPAs.
+       * This 404 page converts a direct deep link (e.g. /gtfo/logs)
+       * into a query-string form (e.g. /gtfo/?/logs) that index.html
+       * can decode and route client-side.
+       */
+      (function redirectToSpaEntryPoint() {
+        // Number of path segments for the repository name.
+        // Example: https://<user>.github.io/<repo>/...  => segmentCount = 1
+        const REPO_SEGMENT_COUNT = 1;
+
+        const { location } = window;
+
+        // Split pathname once to avoid repeated work.
+        // Example: "/gtfo/logs" => ["", "gtfo", "logs"]
+        const pathParts = location.pathname.split("/");
+
+        // Build the base URL: origin + "/<repo>"
+        // Use location.origin when available; fall back for older browsers.
+        const origin =
+          location.origin || `${location.protocol}//${location.host}`;
+
+        const basePath = pathParts
+          .slice(0, 1 + REPO_SEGMENT_COUNT)
+          .join("/");
+
+        // Extract the SPA route after the repo segment(s).
+        // Encode '&' to avoid breaking our query-string transport.
+        const spaRoute = pathParts
+          .slice(1 + REPO_SEGMENT_COUNT)
+          .join("/")
+          .replace(/&/g, "~and~");
+
+        // Preserve existing query params (if any), encoding '&' similarly.
+        const preservedSearch = location.search
+          ? `&${location.search.slice(1).replace(/&/g, "~and~")}`
+          : "";
+
+        // Preserve hash as well (rare here, but harmless and consistent).
+        const targetUrl =
+          `${origin}${basePath}/?/` +
+          `${spaRoute}${preservedSearch}${location.hash}`;
+
+        // Use replace() to avoid polluting browser history with a dead 404 entry.
+        location.replace(targetUrl);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

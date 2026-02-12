@@ -1,0 +1,14 @@
+{
+  "include": ["index.tsx", "inferno-jsx-runtime.d.ts"],
+  "compilerOptions": {
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "target": "ESNext",
+    "jsx": "react-jsx",
+    "jsxImportSource": "inferno",
+    "noEmit": true,
+    "isolatedModules": true,
+    "moduleResolution": "bundler",
+    "skipLibCheck": true
+  }
+}

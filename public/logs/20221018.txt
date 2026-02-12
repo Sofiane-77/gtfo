@@ -1,0 +1,26 @@
+D-Lock Block: unauthorized access... logging
+
+WRDN: override
+
+ACCESS -BIOCOM -29$525GVTHR2%456FS
+ 
+Instantiating BIOCOM.net(CLI)...
+ 
+ready:
+ 
+authorized…
+ 
+connecting...
+ 
+\Root?
+ 
+\Root\RETURN query “Alt” -root -lang -all -dict
+ 
+Queries found (2)… 
+
+'''Alternate (noun, abbreviation)'''
+A substitute designated to take the place of another.
+A replacement of equal or greater value.
+
+'''Alteration (noun, abbreviation)'''
+A modification or adjustment of something, usually to improve suitability for a particular task or experience.

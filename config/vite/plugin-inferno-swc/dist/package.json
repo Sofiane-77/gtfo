@@ -1,0 +1,39 @@
+{
+  "name": "@vitejs/plugin-inferno-swc",
+  "version": "0.0.0",
+  "description": "Inferno plugin for Vite using SWC",
+  "keywords": [
+    "inferno",
+    "swc",
+    "vite",
+    "vite-plugin",
+    "hmr"
+  ],
+  "homepage": "https://github.com/vitejs/vite-plugin-inferno/tree/main/packages/plugin-inferno-swc#readme",
+  "bugs": {
+    "url": "https://github.com/vitejs/vite-plugin-inferno/issues"
+  },
+  "license": "MIT",
+  "author": "Arnaud Barre (https://github.com/ArnaudBarre)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitejs/vite-plugin-inferno.git",
+    "directory": "packages/plugin-inferno-swc"
+  },
+  "type": "module",
+  "dependencies": {
+    "@prefresh/core": "^1.5.9",
+    "@swc/core": "^1.15.11",
+    "@swc/plugin-prefresh": "12.5.0",
+    "swc-plugin-inferno": "2.13.0"
+  },
+  "peerDependencies": {
+    "vite": "^4 || ^5 || ^6 || ^7"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "exports": {
+    ".": "./index.js"
+  }
+}
