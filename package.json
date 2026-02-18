@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "vite",
     "start": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/generate-route-shells.mjs",
     "preview": "vite preview",
     "lint": "eslint src",
     "test": "echo \"Error: no test specified\" && exit 1"
