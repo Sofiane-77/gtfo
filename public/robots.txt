@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://sofiane-77.github.io/gtfo/sitemap.xml
+Sitemap: https://sofiane-77.github.io/gtfo/sitemap.txt
