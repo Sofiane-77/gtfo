@@ -6,6 +6,16 @@ const sourceFile = path.join(distDir, "index.html");
 
 const pages = [
   {
+    route: "",
+    url: "https://sofiane-77.github.io/gtfo/",
+    title: "GTFO Progress — Log Tracker & R8A2 Password",
+    description:
+      "Track your GTFO log progression and get the current weekly R8A2 secondary password.",
+    keywords:
+      "gtfo progress, gtfo log tracker, gtfo logs, gtfo log progression, gtfo player.log parser, gtfo read all logs, achievement_readalllogs, D-Lock Block Decipherer, D-Lock Block Decipherer achievement, r8a2 password, r8a2 secondary password, weekly r8a2 password, gtfo r8a2 password, gtfo tools",
+    image: "https://sofiane-77.github.io/gtfo/images/og/home.jpg",
+  },
+  {
     route: "logs",
     url: "https://sofiane-77.github.io/gtfo/logs/",
     title: "GTFO Progress - Log Tracker",
@@ -29,6 +39,15 @@ const pages = [
 
 function setMetaTag(html, selector, value) {
   return html.replace(selector, value);
+}
+
+function escapeHtml(value) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
 }
 
 function buildPageHtml(template, page) {
@@ -90,6 +109,11 @@ function buildPageHtml(template, page) {
     /<meta\s+name="twitter:image"\s+content="[^"]*"\s*\/?>/,
     `<meta name="twitter:image" content="${page.image}" />`,
   );
+  html = setMetaTag(
+    html,
+    /<div\s+id="root"\s*>[\s\S]*?<\/div>/,
+    `<div id="root"><h1>${escapeHtml(page.title)}</h1></div>`,
+  );
 
   return html;
 }
@@ -107,7 +131,9 @@ async function generateRouteShells() {
   );
 
   process.stdout.write(
-    `Generated SEO route shells: ${pages.map((page) => `/${page.route}/`).join(", ")}\n`,
+    `Generated SEO route shells: ${pages
+      .map((page) => (page.route ? `/${page.route}/` : "/"))
+      .join(", ")}\n`,
   );
 }
 
