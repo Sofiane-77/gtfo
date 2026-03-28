@@ -24,10 +24,23 @@ type TagUpdates = {
 
 type TagUpdateList = Record<string, TagUpdates>;
 
-function updateTags(type: string, tags: HelmetChildProps[]) {
+function isEqualNodeIgnoringHelmetAttribute(a: HTMLElement, b: HTMLElement) {
+  const aClone = a.cloneNode(true) as HTMLElement;
+  const bClone = b.cloneNode(true) as HTMLElement;
+
+  aClone.removeAttribute(HELMET_ATTRIBUTE);
+  bClone.removeAttribute(HELMET_ATTRIBUTE);
+
+  return aClone.isEqualNode(bClone);
+}
+
+function updateTags(type: string, tags: HelmetChildProps[], firstRender: boolean) {
   const headElement = document.head || document.querySelector(TAG_NAMES.HEAD);
 
   const tagNodes = headElement.querySelectorAll<HTMLElement>(`${type}[${HELMET_ATTRIBUTE}]`);
+  const staticNodes = firstRender
+    ? Array.from(headElement.querySelectorAll<HTMLElement>(`${type}:not([${HELMET_ATTRIBUTE}])`))
+    : [];
   const allTags: HTMLElement[] = [];
   const oldTags: HTMLElement[] = Array.from(tagNodes);
   const newTags: HTMLElement[] = [];
@@ -36,7 +49,6 @@ function updateTags(type: string, tags: HelmetChildProps[]) {
     const newElement = document.createElement(type);
 
     for (const [key, value] of Object.entries(tag)) {
-      // eslint-disable-next-line prefer-object-has-own
       if (Object.prototype.hasOwnProperty.call(tag, key)) {
         const name = HTML_TAG_MAP[key] ?? key;
         if (name as TAG_PROPERTIES === TAG_PROPERTIES.INNER_HTML) {
@@ -66,15 +78,32 @@ function updateTags(type: string, tags: HelmetChildProps[]) {
     }
     allTags.push(attrs);
 
+    let foundMatch = false;
+
     for (let i = 0; ; ++i) {
       if (newElement.isEqualNode(oldTags[i]!)) {
         oldTags.splice(i, 1);
+        foundMatch = true;
         break;
       }
       if (i >= oldTags.length) {
-        newTags.push(newElement);
         break;
       }
+    }
+
+    if (!foundMatch && firstRender) {
+      for (let i = 0; i < staticNodes.length; i += 1) {
+        const staticNode = staticNodes[i]!;
+        if (isEqualNodeIgnoringHelmetAttribute(newElement, staticNode)) {
+          staticNode.parentNode?.removeChild(staticNode);
+          staticNodes.splice(i, 1);
+          break;
+        }
+      }
+    }
+
+    if (!foundMatch) {
+      newTags.push(newElement);
     }
   }
 
@@ -172,26 +201,26 @@ export function commitTagChanges(
   updateTitle(title, titleAttributes!);
 
   const tagUpdates: TagUpdateList = {
-    baseTag: updateTags(TAG_NAMES.BASE, base ? [base] : []),
+    baseTag: updateTags(TAG_NAMES.BASE, base ? [base] : [], firstRender),
 
     linkTags: updateTags(TAG_NAMES.LINK, [
       ...priority?.links ?? [],
       ...links ?? [],
-    ]),
+    ], firstRender),
 
     metaTags: updateTags(TAG_NAMES.META, [
       ...priority?.meta ?? [],
       ...meta ?? [],
-    ]),
+    ], firstRender),
 
-    noscriptTags: updateTags(TAG_NAMES.NOSCRIPT, noscript ?? []),
+    noscriptTags: updateTags(TAG_NAMES.NOSCRIPT, noscript ?? [], firstRender),
 
     scriptTags: updateTags(TAG_NAMES.SCRIPT, [
       ...priority?.script ?? [],
       ...script ?? [],
-    ]),
+    ], firstRender),
 
-    styleTags: updateTags(TAG_NAMES.STYLE, style ?? []),
+    styleTags: updateTags(TAG_NAMES.STYLE, style ?? [], firstRender),
   };
 
   const resultTags: StateUpdate = {
