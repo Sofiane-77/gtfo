@@ -106,7 +106,7 @@ export default class LogsPage extends Component<unknown, LogsPageState> {
           <title>GTFO Progress — Log Tracker</title>
           <meta
             name="description"
-            content="Track your GTFO log progression and read all logs in one place through the on-site terminal. Mark collected logs, monitor completion and keep your progress organized."
+            content="Track your GTFO log progression and read all logs in one place through the website terminal. Mark collected logs, monitor completion and keep your progress organized with this GTFO Log Tracker."
           />
           <meta
             name="keywords"
@@ -123,7 +123,7 @@ export default class LogsPage extends Component<unknown, LogsPageState> {
           <meta property="og:title" content="GTFO Progress — Log Tracker" />
           <meta
             property="og:description"
-            content="Track your GTFO log progression and read all logs in one place through the on-site terminal. Mark collected logs, monitor completion and keep your progress organized."
+            content="Track your GTFO log progression and read all logs in one place through the website terminal. Mark collected logs, monitor completion and keep your progress organized with this GTFO Log Tracker."
           />
           <meta
             property="og:image"
@@ -133,7 +133,7 @@ export default class LogsPage extends Component<unknown, LogsPageState> {
           <meta name="twitter:title" content="GTFO Progress — Log Tracker" />
           <meta
             name="twitter:description"
-            content="Track your GTFO log progression and read all logs in one place through the on-site terminal. Mark collected logs, monitor completion and keep your progress organized."
+            content="Track your GTFO log progression and read all logs in one place through the website terminal. Mark collected logs, monitor completion and keep your progress organized with this GTFO Log Tracker."
           />
           <meta
             property="twitter:url"
