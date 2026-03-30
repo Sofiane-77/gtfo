@@ -24,7 +24,7 @@ const pages = [
     seoContent:
       "GTFO Progress helps you review GTFO logs and follow your GTFO log progression with a simple GTFO log tracker, GTFO log viewer, and GTFO player.log parser. You can track GTFO logs in one place, keep a clear GTFO log checklist, monitor GTFO read all logs completion for achievement_readalllogs, and see what is still missing for the D-Lock Block Decipherer achievement. It is an easy way to keep your progress organized while you play.",
     description:
-      "Track your GTFO log progression and read all logs in one place. Mark collected logs, monitor completion and keep your progress organized.",
+      "Track your GTFO log progression and read all logs in one place through the on-site terminal. Mark collected logs, monitor completion and keep your progress organized.",
     keywords:
       "gtfo progress, gtfo log tracker, gtfo logs, gtfo log progression, gtfo player.log parser, gtfo log viewer, gtfo read all logs, achievement_readalllogs, D-Lock Block Decipherer, D-Lock Block Decipherer achievement, gtfo tools, track gtfo logs, gtfo log checklist",
     image: "https://sofiane-77.github.io/gtfo/images/og/logs.jpg",
