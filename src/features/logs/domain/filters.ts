@@ -21,6 +21,7 @@ const uniqueSorted = (values: string[]) => Array.from(new Set(values)).sort();
 function buildSearchSegmentsForTable(log: Log): string[] {
   return [
     log.name,
+    `r${log.rundown}`,
     String(log.rundown),
     ...log.level,
     log.zone ?? "",
